@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fleetman-webapp
+spec:
+  selector: # finds any pod with this label app: webapp and attaches the service to it
+    app: webapp
+  ports:
+  - name: http
+    port: 80
+    nodePort: 30080 # must be > 30,000 to avoid port clashes 
+  type: NodePort # expose port through the node i.e. public, vs private ClusterIP
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fleetman-queue
+spec:
+  selector:
+    app: queue
+  ports:
+  - port: 8161
+    nodePort: 30010
+  type: NodePort

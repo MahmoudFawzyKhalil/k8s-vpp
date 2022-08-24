@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "kubernetes://schema/v1%40pod": "file:///home/mahmoud/Downloads/_Storage/Work/Demo/kubernetes-vpp/networking-tests.yaml"
+    }
+}
